@@ -6,7 +6,6 @@ from tkinter import ttk, messagebox
 # ============================
 
 def ajustar_valor(valor, base):
-    """Rellena con ceros a la izquierda según la base"""
     if base == "Binario":
         return valor.zfill(((len(valor) + 3) // 4) * 4)
     elif base == "Octal":
@@ -25,7 +24,6 @@ def convertir(event=None):
         return
 
     try:
-        # Manejar signo negativo
         negativo = valor.startswith("-")
         if negativo:
             valor = valor[1:]
@@ -50,28 +48,25 @@ def convertir(event=None):
         elif base_nombre == "Hexadecimal":
             if not all(c.upper() in "0123456789ABCDEF" for c in valor):
                 raise ValueError
-            valor = ajustar_valor(valor.upper(), "Hexadecimal")
+            valor = ajustar_valor(valor, "Hexadecimal")
             decimal = int(valor, 16)
 
         else:
             messagebox.showerror("Error", "Seleccione un sistema.")
             return
 
-        # Aplicar signo negativo si corresponde
         if negativo:
             decimal = -decimal
             valor = "-" + valor
 
-        # Mostrar valor corregido en la entrada
         entrada.delete(0, tk.END)
         entrada.insert(0, valor)
 
-        # Resultados en diferentes bases
         resultado.set(
-            f"Binario: {format(decimal, 'b')}\n"
-            f"Octal: {format(decimal, 'o')}\n"
+            f"Binario: {bin(decimal)}\n"
+            f"Octal: {oct(decimal)}\n"
             f"Decimal: {decimal}\n"
-            f"Hexadecimal: 0x{format(decimal, 'X')}"
+            f"Hexadecimal: {hex(decimal).upper()}"
         )
 
     except ValueError:

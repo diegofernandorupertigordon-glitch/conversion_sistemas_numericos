@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Conversión Numérica</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f6f8;
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    main {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+    section {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #2c3e50;
+        margin-top: 0;
+        border-bottom: 2px solid #4CAF50;
+        padding-bottom: 5px;
+    }
+    h3 {
+        color: #4CAF50;
+        margin-top: 15px;
+    }
+    ul, ol {
+        margin-left: 20px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 15px 0;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    code {
+        background-color: #eaeaea;
+        padding: 3px 5px;
+        border-radius: 5px;
+        font-family: monospace;
+    }
+    .btn {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+    .card {
+        background-color: #f9f9f9;
+        border-left: 5px solid #4CAF50;
+        padding: 15px 20px;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Proyecto Conversión Numérica</h1>
+</header>
+
+<main>
+    <section>
+        <h2>1. Descripción del proyecto</h2>
+        <p>La aplicación <strong>Conversión Numérica</strong> es una herramienta educativa desarrollada en Python que permite convertir números entre distintos sistemas de numeración: binario, octal, decimal y hexadecimal.</p>
+        <p>La interfaz gráfica fue creada con Tkinter y estilos modernos (ttk.Style) para ofrecer una experiencia intuitiva, clara y funcional. La aplicación valida automáticamente las entradas del usuario y permite trabajar con números negativos, mostrando resultados precisos en todos los sistemas soportados.</p>
+    </section>
+
+    <section>
+        <h2>2. Objetivos del proyecto</h2>
+        <h3>Objetivo general</h3>
+        <p>Desarrollar una aplicación interactiva que permita la conversión de números entre sistemas: binario, octal, decimal y hexadecimal, con interfaz gráfica amigable y validación de entradas.</p>
+
+        <h3>Objetivos principales</h3>
+        <ul>
+            <li>Facilitar la conversión rápida entre distintos sistemas de numeración.</li>
+            <li>Garantizar que las entradas del usuario sean válidas y coherentes con el sistema seleccionado.</li>
+            <li>Implementar una interfaz moderna y clara, con botones funcionales y resultados visibles.</li>
+            <li>Permitir copiar los resultados al portapapeles para uso externo.</li>
+            <li>Generar un ejecutable <code>.exe</code> que funcione en Windows sin necesidad de instalar Python.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Tecnologías y herramientas utilizadas</h2>
+        <ul>
+            <li>Python 3.13.5</li>
+        </ul>
+        <img src="https://miro.medium.com/1*CwYT02oo0zbA-DPIRK28xQ.jpeg" alt="Python Logo">
+
+        <ul>
+            <li>Tkinter</li>
+        </ul>
+        <img src="https://blog.walthercuro.com/wp-content/uploads/2024/11/image-61.png" alt="Tkinter ejemplo">
+
+        <ul>
+            <li>ttk (Tkinter themed widgets)</li>
+            <li>PyInstaller</li>
+        </ul>
+        <img src="https://epteck.com/wp-content/uploads/2023/11/Pyinstaller.png" alt="PyInstaller">
+
+        <ul>
+            <li>Pillow (opcional)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Funcionalidades principales</h2>
+        <div class="card">
+            <ul>
+                <li>Entrada de número: Permite ingresar un número en el sistema seleccionado.</li>
+                <li>Selección del sistema: Binario, Octal, Decimal, Hexadecimal.</li>
+                <li>Botones principales:
+                    <ul>
+                        <li>Calcular: Realiza la conversión.</li>
+                        <li>Limpiar: Borra la entrada y resultados.</li>
+                        <li>Copiar: Copia los resultados al portapapeles.</li>
+                        <li>Salir: Cierra la aplicación.</li>
+                    </ul>
+                </li>
+                <li>Validación automática de entradas.</li>
+                <li>Resultados en tiempo real.</li>
+                <li>Interfaz centrada y moderna.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Instrucciones de instalación y uso</h2>
+        <h3>5.1 Requisitos</h3>
+        <ul>
+            <li>Python 3.x</li>
+            <li>Librerías: <code>tkinter</code></li>
+            <li>Para generar un ejecutable: PyInstaller</li>
+        </ul>
+
+        <h3>5.2 Uso del script <code>.py</code></h3>
+        <ol>
+            <li>Descargar <code>Conversion_Sistemas_Numericos.py</code></li>
+            <li>Abrirlo en Python IDLE o terminal</li>
+            <li>Seguir estos pasos:
+                <ul>
+                    <li>Ingresar el número a convertir</li>
+                    <li>Seleccionar el sistema</li>
+                    <li>Presionar <strong>Calcular</strong></li>
+                    <li>Usar <strong>Copiar</strong> para copiar resultados</li>
+                    <li>Usar <strong>Limpiar</strong> para borrar datos</li>
+                    <li>Presionar <strong>Salir</strong> para cerrar</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>5.3 Uso del ejecutable <code>.exe</code></h3>
+        <ol>
+            <li>Ejecutar <code>Conversion_Sistemas_Numericos.exe</code></li>
+            <li>Seguir los mismos pasos de uso que en el script</li>
+            <li>Personalizar ícono colocando <code>mi_icono.ico</code> antes de generar el .exe</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>6. Ejemplos de uso</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Entrada</th>
+                    <th>Sistema de origen</th>
+                    <th>Resultados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1010</td>
+                    <td>Binario</td>
+                    <td>Decimal: 10, Octal: 12, Hexadecimal: A</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Decimal</td>
+                    <td>Binario: 1111, Octal: 17, Hexadecimal: F</td>
+                </tr>
+                <tr>
+                    <td>1F</td>
+                    <td>Hexadecimal</td>
+                    <td>Binario: 11111, Decimal: 31, Octal: 37</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>7. Posibles mejoras futuras</h2>
+        <ul>
+            <li>Añadir más sistemas de numeración</li>
+            <li>Exportar resultados a CSV o TXT</li>
+            <li>Soporte multilenguaje</li>
+            <li>Mejor estética con <code>ttkbootstrap</code> o <code>customtkinter</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>8. Glosario de conceptos</h2>
+        <ul>
+            <li>Binario: Sistema base 2</li>
+            <li>Octal: Sistema base 8</li>
+            <li>Decimal: Sistema base 10</li>
+            <li>Hexadecimal: Sistema base 16</li>
+        </ul>
+    </section>
+</main>
+
+</body>
+</html>

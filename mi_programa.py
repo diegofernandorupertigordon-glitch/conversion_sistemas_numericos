@@ -14,7 +14,6 @@ def ajustar_valor(valor, base):
         return valor.zfill(((len(valor) + 1) // 2) * 2)
     return valor
 
-
 def convertir(event=None):
     valor = entrada.get().strip()
     base_nombre = tipo_sistema.get()
@@ -28,6 +27,8 @@ def convertir(event=None):
         if negativo:
             valor = valor[1:]
 
+        valor_original = valor  # Guardamos el valor original para comparar
+
         if base_nombre == "Binario":
             if not all(c in "01" for c in valor):
                 raise ValueError
@@ -35,8 +36,10 @@ def convertir(event=None):
             decimal = int(valor, 2)
 
         elif base_nombre == "Octal":
+            # Si no es octal puro, intentar como decimal
             if not all(c in "01234567" for c in valor):
-                raise ValueError
+                decimal_temp = int(valor)
+                valor = oct(decimal_temp)[2:]
             valor = ajustar_valor(valor, "Octal")
             decimal = int(valor, 8)
 
@@ -59,31 +62,35 @@ def convertir(event=None):
             decimal = -decimal
             valor = "-" + valor
 
+        # Mensaje personalizado por sistema si hubo corrección
+        if valor != valor_original:
+            messagebox.showinfo(
+                "Ajuste automático",
+                f"El número en {base_nombre} fue corregido a: {valor}"
+            )
+
         entrada.delete(0, tk.END)
         entrada.insert(0, valor)
 
         resultado.set(
-            f"Binario: {bin(decimal)}\n"
-            f"Octal: {oct(decimal)}\n"
+            f"Binario: {bin(decimal)[2:]}\n"
+            f"Octal: {oct(decimal)[2:]}\n"
             f"Decimal: {decimal}\n"
-            f"Hexadecimal: {hex(decimal).upper()}"
+            f"Hexadecimal: {hex(decimal)[2:].upper()}"
         )
 
     except ValueError:
         messagebox.showerror("Error", f"El valor ingresado no es válido para {base_nombre}.")
 
-
 def limpiar():
     entrada.delete(0, tk.END)
     resultado.set("")
-
 
 def copiar_resultado():
     ventana.clipboard_clear()
     ventana.clipboard_append(resultado.get())
     ventana.update()
     messagebox.showinfo("Copiado", "Resultado copiado al portapapeles.")
-
 
 # ============================
 # INTERFAZ GRÁFICA
